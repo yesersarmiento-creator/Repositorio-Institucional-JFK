@@ -41,12 +41,15 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 26px 22px;
+      display:flex;
+      gap:24px;
+      align-items:center;
+      flex-wrap:wrap;
     }
 
     h1{
       margin: 0 0 10px;
       font-size: clamp(28px, 4vw, 40px);
-      letter-spacing: .2px;
     }
 
     .subtitle{
@@ -55,231 +58,62 @@
       font-size: clamp(15px, 2vw, 18px);
       max-width: 80ch;
     }
-
-    .grid{
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    @media (max-width: 900px){
-      .grid{ grid-template-columns: 1fr; }
-    }
-
-    .card{
-      border: 1px solid var(--border);
-      background: rgba(15,27,51,.75);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 20px;
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-    .dot{
-      width:10px;height:10px;border-radius:99px;
-      background: linear-gradient(90deg,var(--accent),var(--accent2));
-      box-shadow: 0 0 0 4px rgba(76,201,240,.12);
-    }
-
-    h2{
-      margin: 0 0 8px;
-      font-size: 22px;
-    }
-
-    .lead{
-      margin: 0 0 16px;
-      color: var(--muted);
-    }
-
-    .section-title{
-      display:flex;
-      align-items:baseline;
-      justify-content:space-between;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .section-title small{
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .info-list{
-      margin: 14px 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
-    .info-list li{
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.03);
-    }
-    .info-list b{ color: var(--txt); }
-    .info-list span{ color: var(--muted); }
-
-    /* Video responsive */
-    .video{
-      margin-top: 14px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: rgba(0,0,0,.2);
-    }
-    .video iframe{
-      width:100%;
-      height: 360px;
-      border:0;
-      display:block;
-    }
-    @media (max-width: 600px){
-      .video iframe{ height: 220px; }
-    }
-
-    /* Galería */
-    .gallery{
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    @media (max-width: 900px){
-      .gallery{ grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 520px){
-      .gallery{ grid-template-columns: 1fr; }
-    }
-
-    .ph{
-      aspect-ratio: 4/3;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(76,201,240,.18), rgba(128,237,153,.14));
-      position: relative;
-    }
-    .ph img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      display:block;
-    }
-    .ph::after{
-      content: "Foto";
-      position:absolute;
-      left: 10px;
-      bottom: 10px;
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(0,0,0,.35);
-      color: var(--txt);
-    }
-
-    footer{
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align:center;
-      opacity: .9;
-    }
   </style>
 </head>
 
 <body>
   <main class="wrap">
-    <!-- ENCABEZADO PRINCIPAL -->
-<section class="hero" aria-label="Investigación e Innovación Educativa"
-  style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
 
-  <!-- ESCUDO -->
-  <img src="escudo Kennedy.jpg"
-       alt="Escudo Institucional"
-       style="
-         width:110px;
-         height:auto;
-         filter: drop-shadow(0 6px 14px rgba(0,0,0,.4));
-       ">
+    <!-- ENCABEZADO -->
+    <section class="hero">
+      <img src="escudo Kennedy.jpg" alt="Escudo Institucional" style="width:110px;">
+      <div>
+        <h1>Investigación e Innovación Educativa</h1>
+        <p class="subtitle">
+          Espacio institucional para la divulgación de proyectos de investigación,
+          experiencias pedagógicas e iniciativas de apropiación social del conocimiento
+          desarrolladas por los docentes de la Institución Educativa John F. Kennedy de Repelón.
+        </p>
+      </div>
+    </section>
 
-  <!-- TEXTO -->
-  <div>
-    <h1 style="margin:0 0 10px;">
-      Investigación e Innovación Educativa
-    </h1>
+    <!-- LISTADO DE PROYECTOS -->
+    <section style="margin-top:30px;">
+      <h2>Proyectos institucionales</h2>
 
-    <p class="subtitle" style="margin:0;">
-      Espacio institucional para la divulgación de proyectos de investigación,
-      experiencias pedagógicas e iniciativas de apropiación social del conocimiento
-      desarrolladas por los docentes de la Institución Educativa John F. Kennedy de Repelón.
-    </p>
-  </div>
-
-</section>
-<!-- LISTADO DE PROYECTOS -->
-<section style="margin-top:30px;">
-  <h2 style="margin-bottom:20px;">Proyectos institucionales</h2>
-
-  <div style="
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-    gap:20px;
-  ">
-
-    <!-- TARJETA PROYECTO 1 -->
-    <div style="
-      background:rgba(15,27,51,.85);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:16px;
-      padding:20px;
-    ">
-      <h3>Repelón Lee</h3>
-      <p style="color:#b9c7e6;">
-        Estrategia de apropiación social del conocimiento orientada al fortalecimiento
-        de la comprensión lectora en básica primaria.
-      </p>
-
-      <a href="./repelon-lee/" style="
-        display:inline-block;
-        margin-top:10px;
-        color:#4cc9f0;
-        font-weight:600;
+      <div style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+        gap:20px;
+        margin-top:20px;
       ">
-        👉 Ver proyecto
-      </a>
-    </div>
 
-    <!-- TARJETA PROYECTO 2 (EJEMPLO) -->
-    <div style="
-      background:rgba(15,27,51,.85);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:16px;
-      padding:20px;
-    ">
-      <h3>Nuevo proyecto</h3>
-      <p style="color:#b9c7e6;">
-        Descripción breve del proyecto (2 o 3 líneas).
-      </p>
+        <!-- PROYECTO REPELÓN LEE -->
+        <div style="
+          background:rgba(15,27,51,.85);
+          border:1px solid rgba(255,255,255,.1);
+          border-radius:16px;
+          padding:20px;
+        ">
+          <h3>Repelón Lee</h3>
+          <p style="color:#b9c7e6;">
+            Estrategia de apropiación social del conocimiento orientada al fortalecimiento
+            de la comprensión lectora en básica primaria.
+          </p>
 
-      <span style="color:#888;">Próximamente</span>
-    </div>
+          <!-- 🔴 LINK DEFINITIVO (NO DA 404) -->
+          <a href="repelon-lee/index.html" style="
+            display:inline-block;
+            margin-top:10px;
+            color:#4cc9f0;
+            font-weight:600;
+          ">
+            👉 Ver proyecto
+          </a>
+        </div>
 
-  </div>
-</section>
-
+      </div>
+    </section>
 
   </main>
 </body>
